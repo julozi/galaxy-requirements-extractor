@@ -26,8 +26,10 @@ def main():
 
     if len(sys.argv) != 2:
         print >> sys.stderr, 'usage: extract-requirements <galaxy_tools_path>'
+        sys.exit(1)
 
     if not os.path.exists(sys.argv[1]):
         print >> sys.stderr, 'unknown path', sys.argv[1]
+        sys.exit(1)
 
     os.path.walk(sys.argv[1], extract_requirements, None)
