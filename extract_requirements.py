@@ -24,10 +24,10 @@ def extract_requirements(args, dirname, names):
 
 def main():
 
-    if len(sys.argv) != 1:
+    if len(sys.argv) != 2:
         print >> sys.stderr, 'usage: extract-requirements <galaxy_tools_path>'
 
-    if not os.path.exists(sys.argv[0]):
-        print >> sys.stderr, 'unknown path', sys.argv[0]
+    if not os.path.exists(sys.argv[1]):
+        print >> sys.stderr, 'unknown path', sys.argv[1]
 
-    os.path.walk(sys.argv[0], extract_requirements, None)
+    os.path.walk(sys.argv[1], extract_requirements, None)
